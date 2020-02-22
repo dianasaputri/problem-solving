@@ -1,0 +1,66 @@
+/* #include<bits/stdc++.h>
+using namespace std;
+
+const int N=100;
+char gg[N][N];
+int n,m;
+char cur;
+int contested;
+int di[]={1,-1,0,0};
+int dj[]={0,0,1,-1};
+bool vis[N][N];
+int cnt[26];
+bool valid(int i,int j){
+	return (i>=0 && i<n && j>=0 && j<m);
+}
+int si,sj;
+int cnt1;
+bool here;
+void dfs(int i,int j){
+	if(gg[i][j]!='.' && gg[i][j]!=cur){
+		here=true;
+	}
+	gg[i][j]=cur;
+	vis[i][j]=1;
+	for(int k=0;k<4;k++){
+		int ni=i+di[k],nj=j+dj[k];
+		if(valid(ni,nj) && gg[ni][nj]!='#' && !vis[ni][nj])
+			dfs(ni,nj);
+	}
+}
+int main(){
+	int test_cases;
+	cin>>test_cases;
+	for(int test=1;test<=test_cases;test++){
+		cin>>n>>m;
+		contested=0;
+		memset(vis,0,sizeof vis);
+		memset(cnt,0,sizeof cnt);
+		for(int i=0;i<n;i++){
+			for(int j=0;j<m;j++){
+				cin>>gg[i][j];
+			}
+		}
+		for(int i=0;i<n;i++){
+			for(int j=0;j<m;j++){
+				char cc=gg[i][j];
+				if(cc!='#' && cc!='.' && !vis[i][j]){
+					cur=cc;
+					si=i;
+					sj=j;
+					cnt[cc-'a']++;
+					here=false;
+					dfs(i,j);
+					if(here)
+						contested++,cnt[cc-'a']--;
+				}
+			}
+		}
+		cout<<"Case "<<test<<":\n";
+		for(int i=0;i<26;i++){
+			if(cnt[i])
+				cout<<(char)(i+'a')<<" "<<cnt[i]<<"\n";
+		}
+		cout<<"contested "<<contested<<"\n";
+	}
+}*/
