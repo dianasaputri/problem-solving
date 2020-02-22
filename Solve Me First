@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int solveMeFirst(int a, int b) {
+int solveMeFirst(int a, int b){
     int sum = a + b;
     return sum; 
 }
-int main() {
+int main(){
     int num1, num2;
     int sum;
     cin>>num1>>num2;
