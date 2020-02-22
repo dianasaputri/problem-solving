@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int num_of_elements;
+    cin>>num_of_elements;
+    vector <int> array (num_of_elements);
+    int array_sum = 0;
+
+    for (int i = 0; i < num_of_elements; i++) {
+        cin>>array[i];
+        array_sum += array[i];
+    }
+    cout<<array_sum;
+    return 0;
+}
