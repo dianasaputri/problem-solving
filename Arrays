@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int N;
+    cin>>N;
+    vector<int>A(N);
+    for(int Ai = 0; Ai < N; Ai++) {
+       cin>>A[Ai];
+    }
+    for(int Ai = N-1; Ai >= 0; Ai--) {
+       cout<<A[Ai]<<" ";
+    }
+    return 0;
+}
